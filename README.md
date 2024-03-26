@@ -13,7 +13,7 @@ curl "https://raw.githubusercontent.com/inmanturbo/laravel-maker/main/install.sh
 for simply adding the maker script to a laravel app
 
 ```bash
-curl "https://raw.githubusercontent.com/inmanturbo/laravel-maker/main/maker" | bash
+curl -o maker "https://raw.githubusercontent.com/inmanturbo/laravel-maker/main/maker"
 ```
 
 ### Usage
