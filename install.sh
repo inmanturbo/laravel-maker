@@ -8,3 +8,7 @@ composer require --dev laravel/framework laravel/pint laravel/tinker spatie/lara
 if [ -d "src" ]; then
     ln -s "$(pwd)/src" "$(pwd)/app"
 fi
+
+if ! grep -q "app/" .gitignore; then
+    echo "app/" >> .gitignore
+fi
