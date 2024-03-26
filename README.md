@@ -1,6 +1,6 @@
 # Laravel Maker
 
-Decorator for laravel `make` commands which allows you to pass a stub as an options.
+Decorator for laravel `make` commands which allows you to pass a stub as an option.
 
 installation
 

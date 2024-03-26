@@ -67,6 +67,7 @@ class MakeCommandDecorator extends GeneratorCommand
         return array_merge(
             $this->generator->getOptions(),
             [['stub', null, InputOption::VALUE_OPTIONAL, 'The stub file to use']],
+            [['preset', null, InputOption::VALUE_OPTIONAL, 'The preset']],
         );
     }
 
