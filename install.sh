@@ -1,14 +1,25 @@
-curl -o artisan "https://raw.githubusercontent.com/laravel/laravel/11.x/artisan"
-chmod +x artisan
-curl -o maker "https://raw.githubusercontent.com/inmanturbo/laravel-maker/main/maker"
-chmod +x maker
-curl "https://raw.githubusercontent.com/inmanturbo/laravel-maker/main/bootstrap.sh" | bash
-composer require --dev laravel/framework laravel/pint laravel/tinker spatie/laravel-ignition
-
-if [ -d "src" ]; then
-    ln -s "$(pwd)/src" "$(pwd)/app"
+#if artisan is not found, download it
+if [ ! -f "artisan" ]; then
+    curl -o artisan "https://raw.githubusercontent.com/laravel/laravel/11.x/artisan"
+    chmod +x artisan
 fi
 
-if ! grep -q "app/" .gitignore; then
-    echo "app/" >> .gitignore
+# if maker is not found, download it
+if [ ! -f "maker" ]; then
+    curl -o maker "https://raw.githubusercontent.com/inmanturbo/laravel-maker/main/maker"
+    chmod +x maker
+fi
+
+#there is no bootstrap directory, run the bootstrap script
+if [ ! -d "bootstrap" ]; then
+    curl "https://raw.githubusercontent.com/inmanturbo/laravel-maker/main/bootstrap.sh" | bash
+fi
+
+if [ -d "src" ] && [ ! -d "app" ]; then
+    ln -s "$(pwd)/src" "$(pwd)/app"
+
+    if ! grep -q "app/" .gitignore; then
+        echo "app/" >> .gitignore
+    fi
+    composer require --dev laravel/framework laravel/pint laravel/tinker spatie/laravel-ignition
 fi
