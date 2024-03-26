@@ -24,7 +24,7 @@ if [ ! -d "bootstrap/cache" ]; then
 fi
 
 # Create storage/framework/cache directory and add .gitignore
-mkdir -p "storage/framework/cache"
+mkdir -p "storage/framework/cache/views"
 echo -e "*\n!.gitignore" > "storage/framework/cache/.gitignore"
 
 # Cleanup
