@@ -28,7 +28,7 @@ if [ -d "src" ] && [ ! -d "app" ]; then
 
     if ! grep -q "app/" .gitignore; then
         echo "" >> .gitignore
-        echo "app/" >> .gitignore
+        echo "app" >> .gitignore
     fi
     composer require --dev laravel/framework laravel/pint laravel/tinker spatie/laravel-ignition
 fi
