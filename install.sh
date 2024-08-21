@@ -7,6 +7,8 @@ fi
 # if maker is not found, download it
 if [ ! -f "maker" ]; then
     curl -o maker "https://raw.githubusercontent.com/inmanturbo/laravel-maker/main/maker"
+    echo "" >> .gitignore
+    echo "app" >> .gitignore
     chmod +x maker
 fi
 
