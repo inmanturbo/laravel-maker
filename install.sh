@@ -13,7 +13,8 @@ fi
 if [ ! -f "routes/web.php" ]; then
     mkdir -p routes
     touch routes/web.php
-    chmod +x maker
+    echo "" >> .gitignore
+    echo "routes/web.php" >> .gitignore
 fi
 
 
