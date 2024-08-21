@@ -10,6 +10,13 @@ if [ ! -f "maker" ]; then
     chmod +x maker
 fi
 
+if [ ! -f "routes/web.php" ]; then
+    mkdir -p routes
+    touch routes/web.php
+    chmod +x maker
+fi
+
+
 #there is no bootstrap directory, run the bootstrap script
 if [ ! -d "bootstrap" ]; then
     curl "https://raw.githubusercontent.com/inmanturbo/laravel-maker/main/bootstrap.sh" | bash
