@@ -15,11 +15,11 @@ if [ ! -d "bootstrap" ]; then
     curl "https://raw.githubusercontent.com/inmanturbo/laravel-maker/main/bootstrap.sh" | bash
 fi
 
-if [ -d "src" ] && [ ! -d "app" ]; then
-    ln -s "$(pwd)/src" "$(pwd)/app"
+# if [ -d "src" ] && [ ! -d "app" ]; then
+#     ln -s "$(pwd)/src" "$(pwd)/app"
 
-    if ! grep -q "app/" .gitignore; then
-        echo "app/" >> .gitignore
-    fi
+#     if ! grep -q "app/" .gitignore; then
+#         echo "\n app/" >> .gitignore
+#     fi
     composer require --dev laravel/framework laravel/pint laravel/tinker spatie/laravel-ignition
-fi
+# fi
