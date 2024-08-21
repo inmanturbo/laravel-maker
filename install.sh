@@ -26,7 +26,8 @@ if [ -d "src" ] && [ ! -d "app" ]; then
     ln -s "$(pwd)/src" "$(pwd)/app"
 
     if ! grep -q "app/" .gitignore; then
-        echo "\n app/" >> .gitignore
+        echo "" >> .gitignore
+        echo "app/" >> .gitignore
     fi
     composer require --dev laravel/framework laravel/pint laravel/tinker spatie/laravel-ignition
 fi
