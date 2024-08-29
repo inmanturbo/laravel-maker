@@ -32,5 +32,6 @@ if [ -d "src" ] && [ ! -d "app" ]; then
         echo "" >> .gitignore
         echo "app" >> .gitignore
     fi
-    composer require --dev laravel/framework laravel/pint laravel/tinker spatie/laravel-ignition
 fi
+
+composer require --dev laravel/framework laravel/pint laravel/tinker spatie/laravel-ignition
